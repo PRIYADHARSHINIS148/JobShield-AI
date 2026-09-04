@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>JobShield</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0f1117; color: #e2e8f0; width: 380px; min-height: 200px; }
+    .header { background: #181c27; border-bottom: 1px solid #2a2f45; padding: 0.9rem 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    .logo { font-weight: 700; font-size: 1rem; }
+    .badge { font-size: 0.7rem; background: #4f7cff22; color: #93bbff; border: 1px solid #4f7cff44; border-radius: 4px; padding: 0.1rem 0.4rem; margin-left: auto; }
+    .content { padding: 1rem; }
+    textarea { width: 100%; height: 120px; background: #1e2335; border: 1px solid #2a2f45; border-radius: 8px; color: #e2e8f0; font-size: 0.85rem; padding: 0.7rem; resize: none; font-family: inherit; }
+    textarea:focus { outline: none; border-color: #4f7cff; }
+    .hint { font-size: 0.75rem; color: #8892a4; margin-top: 0.4rem; margin-bottom: 0.8rem; }
+    button { width: 100%; background: #4f7cff; color: #fff; border: none; border-radius: 8px; padding: 0.65rem; font-size: 0.9rem; font-weight: 600; cursor: pointer; }
+    button:hover { background: #3d6ef0; }
+    button:disabled { background: #2a2f45; color: #8892a4; cursor: default; }
+    #result { margin-top: 0.8rem; }
+    .verdict { padding: 0.8rem; border-radius: 8px; font-size: 0.88rem; }
+    .verdict.safe { background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3); }
+    .verdict.warning { background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.3); }
+    .verdict.danger { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); }
+    .score { font-size: 1.4rem; font-weight: 800; float: right; }
+    .safe .score { color: #22c55e; }
+    .warning .score { color: #f59e0b; }
+    .danger .score { color: #ef4444; }
+    .flags { margin-top: 0.6rem; font-size: 0.8rem; color: #8892a4; }
+    .flag-tag { display: inline-block; background: #1e2335; border: 1px solid #2a2f45; border-radius: 4px; padding: 0.1rem 0.4rem; margin: 0.15rem 0.15rem 0 0; font-size: 0.75rem; }
+    .open-link { display: block; text-align: center; margin-top: 0.6rem; font-size: 0.78rem; color: #4f7cff; text-decoration: none; }
+    .open-link:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span>🛡️</span>
+    <span class="logo">JobShield</span>
+    <span class="badge">Scam Detector</span>
+  </div>
+  <div class="content">
+    <textarea id="jobText" placeholder="Paste job posting text here, or select text on the page and right-click → 'Scan with JobShield'…"></textarea>
+    <p class="hint">Tip: Select text on LinkedIn/Indeed, right-click, and choose "Scan with JobShield"</p>
+    <button id="scanBtn">🔍 Scan This Posting</button>
+    <div id="result"></div>
+  </div>
+
+  <script src="salary.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
