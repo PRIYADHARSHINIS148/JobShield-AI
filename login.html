@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JobShield — Access Portal</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo" onclick="window.location.href='index.html'">
+        <span class="logo-icon">🛡️</span>
+        <span class="logo-text">JobShield</span>
+      </div>
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link">Scan</a>
+        <a href="feed.html" class="nav-link">📢 Scam Feed</a>
+        <a href="quiz.html" class="nav-link">🧠 Quiz</a>
+        <a href="dashboard.html" class="nav-link">📊 Dashboard</a>
+        <a href="extension.html" class="nav-link">🧩 Extension</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="glass-panel auth-panel">
+      <div class="auth-tabs">
+        <button id="tab-login-btn" class="auth-tab-btn active">Sign In</button>
+        <button id="tab-register-btn" class="auth-tab-btn">Register</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm" class="auth-form">
+        <div class="form-group">
+          <label for="loginEmail">Email Address</label>
+          <input type="email" id="loginEmail" class="form-control" placeholder="enter your email..." required>
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" class="form-control" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">Sign In ⚡</button>
+        
+        <div style="margin-top: 1.5rem; padding: 0.8rem; background: rgba(59,130,246,0.06); border: 1px dashed rgba(59,130,246,0.25); border-radius: var(--radius-md); font-size: 0.82rem; color: var(--text-muted); text-align: center;">
+          💡 <strong>Quick Testing Demo Account</strong><br>
+          Email: <code style="color: #a5b4fc;">demo@jobshield.com</code> · Password: <code style="color: #a5b4fc;">password123</code>
+        </div>
+      </form>
+
+      <!-- Registration Form -->
+      <form id="registerForm" class="auth-form hidden">
+        <div class="form-group">
+          <label for="registerName">Full Name</label>
+          <input type="text" id="registerName" class="form-control" placeholder="your name..." required>
+        </div>
+        <div class="form-group">
+          <label for="registerEmail">Email Address</label>
+          <input type="email" id="registerEmail" class="form-control" placeholder="email@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="registerPassword">Password</label>
+          <input type="password" id="registerPassword" class="form-control" placeholder="at least 6 characters..." minlength="6" required>
+        </div>
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">Create Account 🛡️</button>
+      </form>
+
+      <div id="authMessage" class="auth-message"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>JobShield · Protect Yourself from Recruitment Fraud · <a href="index.html">Back to scanner</a></p>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>

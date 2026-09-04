@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JobShield — Scam Trend Analytics</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo" onclick="window.location.href='index.html'">
+        <span class="logo-icon">🛡️</span>
+        <span class="logo-text">JobShield</span>
+      </div>
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link">Scan</a>
+        <a href="feed.html" class="nav-link">📢 Scam Feed</a>
+        <a href="quiz.html" class="nav-link">🧠 Quiz</a>
+        <a href="dashboard.html" class="nav-link active">📊 Dashboard</a>
+        <a href="extension.html" class="nav-link">🧩 Extension</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="hero">
+      <h1>Scam Trend Dashboard</h1>
+      <p class="hero-sub">Deep dive into the analytics, metrics, and safety score distributions compiled from your audit histories.</p>
+    </section>
+
+    <!-- Empty State -->
+    <div id="emptyDash" class="glass-panel empty-dash hidden">
+      <div class="empty-icon">📭</div>
+      <h3>No scans recorded yet</h3>
+      <p style="margin-bottom: 1.5rem; max-width: 460px; margin-left: auto; margin-right: auto;">Head back to the scanner, paste or upload a job posting to run your first check, and see real-time statistics aggregated here.</p>
+      <a href="index.html" class="btn-primary">Start Scanning Now 🔍</a>
+    </div>
+
+    <!-- Dash Content -->
+    <div id="dashContent" class="hidden">
+      <!-- Summary metrics -->
+      <div class="stat-grid" id="statGrid"></div>
+
+      <!-- Charts grid -->
+      <div class="charts-row">
+        <div class="chart-card">
+          <h3>📊 Risk Score Distribution</h3>
+          <canvas id="riskChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>🍩 Verdict Breakdown</h3>
+          <canvas id="verdictChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Most triggered red flags -->
+      <div class="chart-card full-width">
+        <h3>🚩 Frequently Triggered Red Flags</h3>
+        <canvas id="flagChart"></canvas>
+      </div>
+
+      <!-- Scan history list -->
+      <div class="chart-card full-width">
+        <h3>📄 Logged Audit History</h3>
+        <div class="table-wrapper">
+          <div id="historyTable"></div>
+        </div>
+        <div style="display: flex; justify-content: flex-end; margin-top: 1.2rem;">
+          <button id="clearHistory" class="btn-ghost danger">🗑️ Wipe History Logs</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>JobShield · Interactive scam intelligence reports for Indian jobs.</p>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="history.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

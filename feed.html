@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JobShield — Community Scam Alert Feed</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo" onclick="window.location.href='index.html'">
+        <span class="logo-icon">🛡️</span>
+        <span class="logo-text">JobShield</span>
+      </div>
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link">Scan</a>
+        <a href="feed.html" class="nav-link active">📢 Scam Feed</a>
+        <a href="quiz.html" class="nav-link">🧠 Quiz</a>
+        <a href="dashboard.html" class="nav-link">📊 Dashboard</a>
+        <a href="extension.html" class="nav-link">🧩 Extension</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="hero">
+      <h1>Community Scam Alerts</h1>
+      <p class="hero-sub">Crowdsourced alerts from across India. View reports shared by other job seekers, audit active threats, and post new scams to protect the community.</p>
+    </section>
+
+    <!-- Alert Banner / CTA -->
+    <div class="feed-header-actions">
+      <div class="feed-filters" id="feedFilters">
+        <button class="feed-filter-btn active" data-filter="all">All Locations</button>
+        <button class="feed-filter-btn" data-filter="remote">Remote / WFH</button>
+        <button class="feed-filter-btn" data-filter="bangalore">Bangalore</button>
+        <button class="feed-filter-btn" data-filter="mumbai">Mumbai</button>
+        <button class="feed-filter-btn" data-filter="delhi">Delhi/NCR</button>
+      </div>
+
+      <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center;">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" class="search-input" placeholder="Search scams by role or company...">
+        </div>
+        <button id="openReportModal" class="btn-primary">Report a Scam 🚨</button>
+      </div>
+    </div>
+
+    <!-- Feed list -->
+    <div class="feed-list" id="feedList">
+      <!-- Dynamically populated -->
+    </div>
+
+    <!-- Report Modal Dialog -->
+    <div class="modal" id="reportModal">
+      <div class="modal-content">
+        <button class="modal-close" id="closeReportModal">×</button>
+        <h2 class="modal-title">🚨 Report a Scam Posting</h2>
+        <form id="reportForm">
+          <div class="form-group">
+            <label for="reportRole">Job Title / Role</label>
+            <input type="text" id="reportRole" class="form-control" placeholder="e.g. Data Entry Executive, HR Assistant" required>
+          </div>
+          <div class="form-group">
+            <label for="reportCompany">Claimed Company Name</label>
+            <input type="text" id="reportCompany" class="form-control" placeholder="e.g. Star Enterprises (write 'Unknown' if vague)" required>
+          </div>
+          <div class="form-group">
+            <label for="reportCity">Location / City</label>
+            <select id="reportCity" class="form-control" required>
+              <option value="Remote">Remote / Work From Home</option>
+              <option value="Bangalore">Bangalore / Bengaluru</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Delhi">Delhi / Noida / Gurgaon</option>
+              <option value="Chennai">Chennai</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Pune">Pune</option>
+              <option value="Other">Other Indian City</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="reportText">Job Description / Message Text</label>
+            <textarea id="reportText" class="form-control" style="min-height: 120px; font-family: inherit; resize: vertical;" placeholder="Paste the text from WhatsApp, SMS, email, or social media ad here..." required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="reportReason">Reason for Reporting (What went wrong?)</label>
+            <input type="text" id="reportReason" class="form-control" placeholder="e.g. Asked for ₹1000 registration fee, WhatsApp only" required>
+          </div>
+          <div style="display: flex; gap: 0.8rem; justify-content: flex-end; margin-top: 1.5rem;">
+            <button type="button" id="cancelReport" class="btn-ghost">Cancel</button>
+            <button type="submit" class="btn-primary">Post Report 📢</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>JobShield · Crowdsourced recruitment fraud security network.</p>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="feed.js"></script>
+</body>
+</html>

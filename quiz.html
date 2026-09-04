@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JobShield — Scam IQ Challenge</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo" onclick="window.location.href='index.html'">
+        <span class="logo-icon">🛡️</span>
+        <span class="logo-text">JobShield</span>
+      </div>
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link">Scan</a>
+        <a href="feed.html" class="nav-link">📢 Scam Feed</a>
+        <a href="quiz.html" class="nav-link active">🧠 Quiz</a>
+        <a href="dashboard.html" class="nav-link">📊 Dashboard</a>
+        <a href="extension.html" class="nav-link">🧩 Extension</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="hero">
+      <h1>Scam IQ Challenge</h1>
+      <p class="hero-sub">Test your security awareness! Can you spot the tricks scammers use to trap job seekers? Complete the quiz to earn your Security Badge.</p>
+    </section>
+
+    <div class="glass-panel quiz-panel">
+      <!-- Quiz Progress -->
+      <div class="quiz-header" id="quizHeader">
+        <span id="questionCounter" style="font-weight: 700; color: var(--text-muted);">Question 1 of 5</span>
+        <span class="quiz-score-tracker" id="scoreTracker">Score: 0 / 0</span>
+      </div>
+
+      <div class="checklist-progress" id="quizProgress" style="margin-bottom: 2rem;">
+        <div class="progress-bar"><div class="progress-fill" id="quizProgressFill" style="width: 20%"></div></div>
+      </div>
+
+      <!-- Question & Option Container -->
+      <div id="quizContent">
+        <div class="question-box">
+          <p class="quiz-question" id="questionText">Loading question...</p>
+          <div class="quiz-options" id="optionsContainer">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <div id="explanationBox" class="quiz-explanation hidden">
+          <!-- Dynamically populated -->
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem;">
+          <button id="nextBtn" class="btn-primary hidden">Next Question ➡️</button>
+        </div>
+      </div>
+
+      <!-- Result Screen (Hidden by Default) -->
+      <div id="quizResult" class="quiz-result-screen hidden">
+        <div class="quiz-badge-icon" id="resultIcon">🏆</div>
+        <h2 id="resultTitle">Challenge Completed!</h2>
+        <p class="quiz-result-score" id="resultScore">0 / 5</p>
+        <p id="resultText" style="color: var(--text-muted); margin-bottom: 2rem;">Loading details...</p>
+
+        <!-- Dynamic Certificate Panel (Shown if Score is High) -->
+        <div id="certificateContainer" class="hidden">
+          <div style="margin-bottom: 1.5rem;">
+            <label for="certNameInput" class="input-label" style="text-align: center;">Enter your name for the Certificate</label>
+            <input type="text" id="certNameInput" class="form-control" style="max-width: 320px; margin: 0 auto; text-align: center;" placeholder="Your Name">
+            <button id="certGenerateBtn" class="btn-primary" style="margin-top: 0.8rem; font-size: 0.85rem; padding: 0.5rem 1.2rem;">Generate Certificate 📄</button>
+          </div>
+
+          <div class="certificate-card" id="certificateCard">
+            <div class="cert-title">🛡️ JobShield Certified</div>
+            <div class="cert-sub">Digital Safety & Scam Awareness</div>
+            <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">This certificate is proudly awarded to</div>
+            <div class="cert-name" id="certNameOutput">Job Seeker</div>
+            <div class="cert-text">for successfully completing the JobShield Scam IQ challenge and demonstrating advanced expertise in identifying recruitment fraud and employment scams.</div>
+            <div class="cert-footer">
+              <div style="text-align: left;">
+                <span style="display:block; font-size: 0.72rem;">Verification ID</span>
+                <strong id="certId" style="color:#ffffff;">JS-87422</strong>
+              </div>
+              <div class="cert-sig">
+                <div class="cert-sig-name">JobShield AI</div>
+                <span style="font-size: 0.65rem;">Platform Security</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button id="restartBtn" class="btn-ghost" style="margin-top: 1rem;">Try Challenge Again 🔄</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>JobShield · Interactive scam defense tools for Indian careers.</p>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="quiz.js"></script>
+</body>
+</html>

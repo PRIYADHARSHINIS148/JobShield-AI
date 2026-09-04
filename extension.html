@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JobShield — Chrome Extension Setup Guide</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo" onclick="window.location.href='index.html'">
+        <span class="logo-icon">🛡️</span>
+        <span class="logo-text">JobShield</span>
+      </div>
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link">Scan</a>
+        <a href="feed.html" class="nav-link">📢 Scam Feed</a>
+        <a href="quiz.html" class="nav-link">🧠 Quiz</a>
+        <a href="dashboard.html" class="nav-link">📊 Dashboard</a>
+        <a href="extension.html" class="nav-link active">🧩 Extension</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="hero">
+      <h1>JobShield Chrome Extension</h1>
+      <p class="hero-sub">Audit jobs as you browse. Scan job descriptions on LinkedIn, Indeed, and Naukri with a single right-click selection.</p>
+    </section>
+
+    <div class="glass-panel ext-grid" style="margin-bottom: 2.5rem;">
+      <div>
+        <h2 style="font-size: 1.6rem; margin-bottom: 1rem; color: #ffffff;">Browse Jobs Safely</h2>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6;">The JobShield browser extension embeds our scam detection engine directly into your daily surfing experience. No need to toggle windows or copy-paste text back and forth.</p>
+        
+        <div class="ext-features-list">
+          <div class="ext-feat-item">
+            <div class="ext-feat-num">1</div>
+            <div>
+              <h4 class="ext-feat-title">Select & Right-Click Scan</h4>
+              <p class="ext-feat-desc">Highlight any suspicious job description on LinkedIn or Naukri, right-click, and select "Scan with JobShield".</p>
+            </div>
+          </div>
+          <div class="ext-feat-item">
+            <div class="ext-feat-num">2</div>
+            <div>
+              <h4 class="ext-feat-title">Instant Toolbar Popup</h4>
+              <p class="ext-feat-desc">Click the extension icon in your menu bar to quickly paste text, check scores, or view recent safety checklists.</p>
+            </div>
+          </div>
+          <div class="ext-feat-item">
+            <div class="ext-feat-num">3</div>
+            <div>
+              <h4 class="ext-feat-title">On-the-Fly Salary Audits</h4>
+              <p class="ext-feat-desc">Extracts job salaries automatically and compares them with live Indian local market averages.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mock UI Preview -->
+      <div>
+        <div class="mock-browser">
+          <div class="browser-bar">
+            <span class="browser-dot" style="background:#ff5f56"></span>
+            <span class="browser-dot" style="background:#ffbd2e"></span>
+            <span class="browser-dot" style="background:#27c93f"></span>
+            <div class="browser-address"></div>
+            <span style="font-size: 0.8rem; margin-left: auto;">🧩</span>
+          </div>
+          <div class="mock-popup">
+            <div class="mock-popup-header">
+              <span>🛡️</span> JobShield Scanner
+              <span style="margin-left: auto; font-size: 0.72rem; color: var(--green);">v1.0 Active</span>
+            </div>
+            <div class="mock-popup-scan">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span style="font-size: 0.72rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Scan Result</span>
+                <span class="score-pill danger" style="padding: 0.1rem 0.4rem; font-size: 0.75rem;">🚨 82/99</span>
+              </div>
+              <p style="font-size: 0.8rem; font-weight: 700; margin-bottom: 0.2rem; color: #fff;">High Scam Risk</p>
+              <p style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.3; margin-bottom: 0.4rem;">3 high severity red flags triggered. Asked for upfront training fees on WhatsApp.</p>
+              <button class="mock-popup-btn">View Detailed Safety Checklist</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Installation Steps -->
+    <h2 style="font-size: 1.5rem; margin-bottom: 1.2rem; border-left: 4px solid var(--primary); padding-left: 0.8rem;">How to Install in Google Chrome</h2>
+    <div class="ext-steps">
+      <div class="ext-step-item">
+        <h4><span>📁</span> Step 1: Identify the Extension Directory</h4>
+        <p>Locate the <code>extension/</code> folder inside the <code>jobshield</code> codebase folder on your computer.</p>
+      </div>
+
+      <div class="ext-step-item">
+        <h4><span>🌐</span> Step 2: Open Chrome Extensions Page</h4>
+        <p>Open Google Chrome and navigate to <code>chrome://extensions/</code> by pasting it into the URL bar and hitting Enter.</p>
+      </div>
+
+      <div class="ext-step-item">
+        <h4><span>⚙️</span> Step 3: Enable Developer Mode</h4>
+        <p>Toggle the <strong>"Developer mode"</strong> switch in the top-right corner of the Extensions page to ON.</p>
+      </div>
+
+      <div class="ext-step-item">
+        <h4><span>📦</span> Step 4: Load Unpacked Folder</h4>
+        <p>Click the <strong>"Load unpacked"</strong> button in the top-left corner of the page. Select the <code>extension/</code> folder inside the project directory.</p>
+      </div>
+
+      <div class="ext-step-item">
+        <h4><span>📌</span> Step 5: Pin and Start Scanning!</h4>
+        <p>Click the puzzle icon in Chrome toolbar, find <strong>JobShield</strong>, and click the pin icon. You can now select any text on web pages, right-click, and click <strong>"Scan with JobShield"</strong>.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>JobShield · Lightweight client integrations for secure job browsing.</p>
+  </footer>
+
+  <script src="auth.js"></script>
+</body>
+</html>

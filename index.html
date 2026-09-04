@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JobShield — Instant Job Scam Detector</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo" onclick="window.location.href='index.html'">
+        <span class="logo-icon">🛡️</span>
+        <span class="logo-text">JobShield</span>
+      </div>
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link active">Scan</a>
+        <a href="feed.html" class="nav-link">📢 Scam Feed</a>
+        <a href="quiz.html" class="nav-link">🧠 Quiz</a>
+        <a href="dashboard.html" class="nav-link">📊 Dashboard</a>
+        <a href="extension.html" class="nav-link">🧩 Extension</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="hero">
+      <h1>Detect Job Scams Instantly</h1>
+      <p class="hero-sub">Shielding Indian job seekers. Copy-paste job details or upload a WhatsApp/portal screenshot to audit red flags, verify company domain registry, inspect contacts, and analyze salary fairness.</p>
+    </section>
+
+    <!-- Input tabs -->
+    <div class="input-tabs">
+      <button class="tab-btn active" data-tab="text">📝 Paste Text</button>
+      <button class="tab-btn" data-tab="image">📷 Upload Screenshot</button>
+    </div>
+
+    <div class="glass-panel" style="border-top-left-radius: 0;">
+      <!-- Text tab -->
+      <div id="tab-text" class="tab-panel">
+        <label for="jobInput" class="input-label">Job Posting Details</label>
+        <textarea id="jobInput" class="job-textarea" placeholder="Paste the job posting description here — include title, salary, email domains, phone numbers, or company name…"></textarea>
+      </div>
+
+      <!-- Image tab -->
+      <div id="tab-image" class="tab-panel hidden">
+        <label class="input-label">Screenshot Upload</label>
+        <div class="upload-zone" id="uploadZone">
+          <input type="file" id="imageFile" accept="image/*" style="display:none"/>
+          <div class="upload-inner" id="uploadInner">
+            <span class="upload-icon">📷</span>
+            <p>Drag and drop a screenshot here or <span class="upload-link">browse files</span></p>
+            <p class="upload-hint">Supports PNG, JPG, WEBP — upload WhatsApp chats, LinkedIn screenshots, or portal ads</p>
+          </div>
+          <canvas id="ocrCanvas" style="display:none"></canvas>
+          <div id="ocrPreview" class="ocr-preview hidden"></div>
+        </div>
+        <div id="ocrStatus" class="ocr-status hidden"></div>
+        <div id="extractedTextBox" class="extracted-text-box hidden">
+          <div class="input-label" style="margin-bottom:0.5rem;">📄 Extracted Text (Editable)</div>
+          <textarea id="extractedText" class="job-textarea" style="min-height:140px;"></textarea>
+        </div>
+      </div>
+      <!-- AI Integration Controls -->
+      <div class="ai-controls-row">
+        <label class="ai-toggle-label" for="aiScanToggle">
+          <input type="checkbox" id="aiScanToggle"/>
+          <span>✨ Enable Gemini AI Semantic Review</span>
+        </label>
+        <button id="aiSettingsBtn" class="btn-settings-icon">⚙️ API Settings</button>
+      </div>
+
+      <div id="aiSettingsPanel" class="ai-settings-panel hidden">
+        <label for="geminiApiKey" class="input-label" style="font-size:0.8rem; margin-bottom:0.2rem; display:block;">Gemini API Key (Required for AI Scan)</label>
+        <div class="key-input-row">
+          <input type="password" id="geminiApiKey" class="key-input" placeholder="Enter Gemini API Key (AIzaSy...)"/>
+          <button id="saveKeyBtn" class="btn-primary" style="padding:0.45rem 1rem; font-size:0.85rem; border-radius:4px;">Save</button>
+        </div>
+        <p style="color:var(--text-muted); font-size:0.75rem; margin-top:0.4rem; margin-bottom:0;">
+          Get a <strong>free key</strong> in 30 seconds from <a href="https://aistudio.google.com/" target="_blank" style="color:var(--accent)">Google AI Studio</a>. Keys are stored safely in your browser.
+        </p>
+      </div>
+
+      <div class="scan-actions">
+        <button id="clearBtn" class="btn-ghost">Clear</button>
+        <button id="scanBtn" class="btn-primary">Analyze Posting 🔍</button>
+      </div>
+    </div>
+
+    <div id="loadingState" class="loading-state hidden">
+      <div class="spinner"></div>
+      <p id="loadingMsg">Auditing text for scam indicators…</p>
+    </div>
+
+    <div id="resultPanel" class="result-panel hidden"></div>
+  </main>
+
+  <footer class="site-footer">
+    <p>JobShield · Built to protect Indian job seekers from recruitment fraud.</p>
+    <p>Report scams: <a href="https://cybercrime.gov.in" target="_blank">cybercrime.gov.in</a> | Cyber Helpline: <strong>1930</strong></p>
+  </footer>
+
+  <script src="auth.js"></script>
+  <!-- Tesseract OCR from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+  <script src="salary.js"></script>
+  <script src="history.js"></script>
+  <script src="verify.js"></script>
+  <script src="contacts.js"></script>
+  <script src="checklist.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
